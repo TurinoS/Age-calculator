@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         box-sizing: border-box;
         font-family: 'Roboto_Flex', sans-serif;
+        color: var(--bg-dark)
     }
 
     body {

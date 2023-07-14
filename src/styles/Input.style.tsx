@@ -7,6 +7,7 @@ const StyledInput = styled.div`
     & label {
         text-transform: capitalize;
         font-size: 20px;
+        font-weight: 600;
     }
     
     & input {
