@@ -16,6 +16,11 @@ const StyledInput = styled.div`
         border-radius: 10px;
         border: none;
         box-shadow: 2px 2px 4px 2px var(--bg-darker);
+
+        &:focus {
+            outline: none;
+            border: none;
+        }
     }
 
     &::placeholder {

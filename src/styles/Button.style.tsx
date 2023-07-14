@@ -16,6 +16,8 @@ const StyledButton = styled.button`
         cursor: pointer;
         color: var(--bg-darker);
         background-image: radial-gradient(var(--bg-light) 60%, var(--white) 40%);
+        transform: scale(1.05);
+        transform-origin: center;
     }
 `
 
