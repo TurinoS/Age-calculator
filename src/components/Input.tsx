@@ -5,6 +5,7 @@ interface InputProps {
   placeholder: string;
   maxLength: number;
   minLength: number;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export default function Input({
@@ -12,6 +13,7 @@ export default function Input({
   placeholder,
   maxLength,
   minLength,
+  onChange,
 }: InputProps) {
   return (
     <StyledInput>
@@ -23,6 +25,7 @@ export default function Input({
         placeholder={placeholder}
         maxLength={maxLength}
         minLength={minLength}
+        onChange={onChange}
         required
         />
     </StyledInput>
