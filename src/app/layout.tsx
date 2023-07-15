@@ -1,3 +1,4 @@
+import { AppContextProvider } from '@/context/AppContext'
 import { GlobalStyle } from '@/styles/GlobalStyles'
 import { Inter } from 'next/font/google'
 
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GlobalStyle />
-      <body>{children}</body>
+      <AppContextProvider>
+        <body>{children}</body>
+      </AppContextProvider>
     </html>
   )
 }
