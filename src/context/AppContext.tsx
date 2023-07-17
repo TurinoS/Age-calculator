@@ -76,7 +76,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
         userBirthMonth === currentMonth &&
         userBirthDay > currentDay)
     ) {
-      setInvalidMonth(true);
+      setFutureDate(true);
       setSubmited(false);
       return;
     }
@@ -88,9 +88,36 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
     }
 
     if (
-      (userBirthMonth === (1 || 3 || 5 || 7 || 8 || 10 || 12) && userBirthDay > 31) ||
-      (userBirthMonth === (4 || 6 || 9 || 11) && userBirthDay > 30) ||
-      (userBirthMonth === 2 && (userBirthYear % 4 === 0 && userBirthDay > 29) || (userBirthYear % 4 != 0 && userBirthDay > 28))
+      (userBirthMonth === 1 ||
+        userBirthMonth === 3 ||
+        userBirthMonth === 5 ||
+        userBirthMonth === 7 ||
+        userBirthMonth === 8 ||
+        userBirthMonth === 10 ||
+        userBirthMonth === 12) &&
+      userBirthDay > 31
+    ) {
+      setInvalidDay(true);
+      setSubmited(false);
+      return;
+    }
+    
+    if (
+      (userBirthMonth === 4 ||
+        userBirthMonth === 6 ||
+        userBirthMonth === 9 ||
+        userBirthMonth === 11) &&
+      userBirthDay > 30
+    ) {
+      setInvalidDay(true);
+      setSubmited(false);
+      return;
+    }
+    
+    if (
+      userBirthMonth === 2 &&
+      ((userBirthYear % 4 === 0 && userBirthDay > 29) ||
+        (userBirthYear % 4 !== 0 && userBirthDay > 28))
     ) {
       setInvalidDay(true);
       setSubmited(false);
