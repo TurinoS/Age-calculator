@@ -1,3 +1,5 @@
+'use client'
+
 import Form from "@/components/Form"
 import ResponseSection from "@/components/ResponseSection"
 import Container from "@/styles/Container.style"

@@ -1,17 +1,19 @@
 'use client'
 
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useState, FormEvent } from "react";
 
 interface AppContextValue {
     handleDay: (day: string) => void;
     handleMonth: (month: string) => void;
     handleYear: (year: string) => void;
+    calcAge: (event: FormEvent<HTMLFormElement>) => void;
 }
 
 export const AppContext = createContext<AppContextValue>({
     handleDay: () => {},
     handleMonth: () => {},
     handleYear: () => {},
+    calcAge: () => {},
   });
 
 export const AppContextProvider = ({ children }: { children: ReactNode }) => {
@@ -35,20 +37,25 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
       setBirthYear(year);
     };
 
-    function calcAge(dayOfBirth, monthOfBirth, yearOfBirth) {
+    function calcAge(event: FormEvent<HTMLFormElement>) {
+      event.preventDefault();
       const currentDate = new Date();
       const currentDay = currentDate.getDate();
       const currentMonth = currentDate.getMonth() + 1;
       const currentYear = currentDate.getFullYear();
+
+      const userBirthDay = parseInt(birthDay)
+      const userBirthMonth = parseInt(birthMonth)
+      const userBirthYear = parseInt(birthYear)
     
-      let age = currentYear - yearOfBirth;
+      let age = currentYear - userBirthYear;
     
-      if (currentMonth < monthOfBirth || (currentMonth === monthOfBirth && currentDay < dayOfBirth)) {
+      if (currentMonth < userBirthMonth || (currentMonth === userBirthMonth && currentDay < userBirthDay)) {
         age--;
       }
     
-      let months = currentMonth - monthOfBirth;
-      let days = currentDay - dayOfBirth;
+      let months = currentMonth - userBirthMonth;
+      let days = currentDay - userBirthDay;
     
       if (days < 0) {
         months--;
@@ -61,16 +68,11 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
         months += 12;
       }
     
-      return {
-        years: age,
-        months: months,
-        days: days
-      };
+      console.log(age, months, days)
     }
-    
 
     return(
-        <AppContext.Provider value={{ handleDay, handleMonth, handleYear }}>
+        <AppContext.Provider value={{ handleDay, handleMonth, handleYear, calcAge }}>
             {children}
         </AppContext.Provider>
     );
