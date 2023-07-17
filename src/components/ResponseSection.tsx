@@ -5,7 +5,7 @@ import StyledSection from "@/styles/Response.style";
 import { useContext } from 'react'
 
 export default function ResponseSection() {
-    const { livedYears, livedMonths, livedDays, submited, futureDate } = useContext(AppContext)
+    const { livedYears, livedMonths, livedDays, submited } = useContext(AppContext)
     return(
         <StyledSection>
             <h2>{submited ? livedYears : "--"} {livedYears != 1 ? <span>anos</span> : <span>ano</span>}</h2>

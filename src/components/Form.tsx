@@ -24,13 +24,15 @@ export default function Form() {
       
     return(
         <StyledForm onSubmit={calcAge}>
-            {futureDate ? <p>Data inválida</p> : null}
-            {invalidDay ? <p>dia inválido</p> : null}
-            {invalidMonth ? <p>mês inválido</p> : null}
             <Input id="dia" placeholder="dd" maxLength={2} minLength={2} onChange={handleDayChange} />
             <Input id="mês" placeholder="mm" maxLength={2} minLength={2} onChange={handleMonthChange} />
             <Input id="ano" placeholder="aaaa" maxLength={4} minLength={4} onChange={handleYearChange} />
-            <Button />
+            <div>
+                {futureDate ? <p>Data inválida</p> : null}
+                {invalidDay ? <p>dia inválido</p> : null}
+                {invalidMonth ? <p>mês inválido</p> : null}
+                <Button />
+            </div>
         </StyledForm>
     )
 }

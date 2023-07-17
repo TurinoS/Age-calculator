@@ -11,7 +11,7 @@ const StyledForm = styled.form`
     & p {
         color: red;
         position: absolute;
-        top: 26vh;
+        top: 25vh;
         right: 26.5vw;
     }
 `

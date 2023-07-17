@@ -124,17 +124,21 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
       return;
     }
 
-    let age = currentYear - userBirthYear;
+    let age = currentYear - userBirthYear;    
+    let months = currentMonth - userBirthMonth;
+    let days = currentDay - userBirthDay;
 
     if (
       currentMonth < userBirthMonth ||
-      (currentMonth === userBirthMonth && currentDay < userBirthDay)
+      (currentMonth === userBirthMonth && currentDay < userBirthDay) ||
+      months < 0
     ) {
       age--;
+      if (age < 0) {
+        age = 0;
+      }
+      months += 12;
     }
-
-    let months = currentMonth - userBirthMonth;
-    let days = currentDay - userBirthDay;
 
     if (days < 0) {
       months--;
@@ -144,14 +148,6 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
         0
       ).getDate();
       days += lastDayOfPreviousMonth;
-    }
-
-    if (months < 0) {
-      age--;
-      if (age < 0) {
-        age = 0;
-      }
-      months += 12;
     }
 
     setLivedYears(age);
