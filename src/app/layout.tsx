@@ -1,5 +1,6 @@
 import { AppContextProvider } from '@/context/AppContext'
 import { Inter } from 'next/font/google'
+import StyledComponentsRegistry from '../../registry'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <AppContextProvider>
-        <body>{children}</body>
+        <body>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>  
+        </body>
       </AppContextProvider>
     </html>
   )

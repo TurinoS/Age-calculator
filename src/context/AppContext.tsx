@@ -68,6 +68,7 @@ export const AppContextProvider = ({ children }: { children: ReactNode }) => {
 
     setInvalidMonth(false)
     setInvalidDay(false)
+    setFutureDate(false);
 
     if (
       userBirthYear > currentYear ||

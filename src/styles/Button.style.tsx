@@ -9,8 +9,18 @@ const StyledButton = styled.button`
     color: var(--bg-dark);
     font-size: 60px;
     position: relative;
-    top: 65px;
+    top: 70px;
     right: 10px;
+
+    @media (max-width: 660px) {
+        top: -2vh;
+        left: 25vw;
+    }
+
+    @media (max-width: 470px) {
+        top: -2vh;
+        left: 0vw;
+    }
 
     &:hover {
         cursor: pointer;
