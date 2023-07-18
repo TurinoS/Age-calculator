@@ -15,6 +15,7 @@ const Container = styled.div`
 
     @media (max-width: 510px) {
         margin: 15vh 5vw;
+        border-radius: 25px 25px 100px 25px;
     }
 `
 

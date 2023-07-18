@@ -19,7 +19,7 @@ const StyledForm = styled.form`
         color: red;
         position: absolute;
         width: 100px;
-        top: 180px;
+        top: 170px;
         right: 25vw;
 
         @media (max-width: 980px) {
