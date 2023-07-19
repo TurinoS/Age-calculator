@@ -45,7 +45,7 @@ ou
 yarn dev
 ```
 
-ou usar o link para o projeto [https://age-calculator-turinos.vercel.app/](https://age-calculator-turinos.vercel.app/)
+ou pode ver a aplicação rodando no link [https://age-calculator-turinos.vercel.app/](https://age-calculator-turinos.vercel.app/)
 
 ## 😎 Minhas redes
 
