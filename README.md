@@ -3,7 +3,7 @@
 ## Você pode ver o projeto em funcionamento [AQUI](https://age-calculator-turinos.vercel.app/)
 
 ## :dart: Proposta:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Peguei o desafio do Age Calculator no [frontendmentor.io](https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q/hub), pois percebi que seria uma ótima oportunidade para testar e desenvovler minhas habilidades de lógica de programação. Além, é claro, de aprofundar minhas hardskills utilizando Next.js, TypeScript e styled components.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Peguei o desafio do Age Calculator no [frontendmentor.io](https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q/hub), pois percebi que seria uma ótima oportunidade para testar e desenvovler minhas habilidades de lógica de programação. Além, é claro, de aprofundar minhas hardskills utilizando Next.js, TypeScript e styled components.  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trata-se de um app que recebe o dia, mês e ano de nascimento do usuário e calcula sua idade em dias, meses e anos. As partes mais trabalhosas foram organizar a lógica da subtração das datas e a validação dos campos de texto para que pudessem receber apenas dias existentes, levando em conta os anos bissextos e as diferenças entre meses com 31 ou 30 dias.
 
 ## 🛠 Tecnologias utilizadas:
